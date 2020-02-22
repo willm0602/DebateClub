@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#nameInput{
+  border-radius:10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+#teams{
+  position: relative;
+  grid-template-columns: 30% 30%;
+  display: grid;
+  justify-content: center;
+  top:20%;
+  font-size: 200%;
+}
+
+#pros{
+  background-color: aqua;
+  text-align: center;
+  padding-bottom: 10%;
+}
+#cons{
+  background-color: red;
+  text-align: center;
+  padding-bottom: 10%;
+}
+.underlinedHeader{
+  text-decoration: underline;
+  font-size: 100%;
+}
+#startDebate{
+  width: 60%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.Timer{
+  width: 100%;
+  height: 100%;
+}
+.superHeader{
+  font-size: 450%;
+}
+.pro{
+  background-color: blue;
+  width: 100%;
+  height:100%;
+}
+.con{
+  background-color: red;
+  width: 100%;
+  height:100%;
+}
+#timer{
+  width: 100%;
+  height: 100%;
+}
+.buffer{
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
