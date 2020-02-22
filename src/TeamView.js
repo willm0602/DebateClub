@@ -1,3 +1,6 @@
+/**
+ * Randomizes team and allows user to view teasm
+ */
 import React from 'react';
     
 class TeamView extends React.Component
@@ -8,11 +11,11 @@ class TeamView extends React.Component
     }
     render()
     {
-        var prosList = [];
-        var consList = [];
-        var people = this.props.names;
-        while(people.length>0){
-            if(people.length==1)
+        var prosList = []; //affirmative team
+        var consList = []; //negative team
+        var people = this.props.names; //all people
+        while(people.length>0){ 
+            if(people.length==1) //if only one person left, add to a random team
             {
                 var choice = parseInt(2*Math.random());
                 if(choice==0)
@@ -24,7 +27,7 @@ class TeamView extends React.Component
                 }
                 people.splice(0,1);
             }
-            else{
+            else{ //add two people, one to affirmative team, one to negative
                 var index = parseInt(Math.random()*people.length);
                 var JSX = <p>{people[index]}</p>;
                 prosList.push(JSX);

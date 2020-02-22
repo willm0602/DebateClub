@@ -1,10 +1,13 @@
+/**
+ * React Component to add people to the debate
+ */
 import React from 'react';
 
-var names = [];
+var names = []; //list of people
 
-class Adder extends React.Component
+class Adder extends React.Component //the component
 {
-    remove(name)
+    remove(name) //removes person from the list
     {
         for(var i = 0; i<names.length; i++)
         {
@@ -17,7 +20,7 @@ class Adder extends React.Component
             }
         }
     }
-    add()
+    add() //adds person to the list
     {
         var name = document.getElementById("nameInput").value;
         if(name.length>0)

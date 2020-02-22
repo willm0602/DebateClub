@@ -1,3 +1,6 @@
+/**
+ * React component for the timers
+ */
 import React from 'react';
 
 class Argument{
@@ -31,6 +34,8 @@ function makeBuffer()
     return(new Argument("buffer",6,"Buffer"));
 }
 var structure = [];
+
+//all of the categories for the debate
 structure.push(new Argument("buffer",120,"Preparation"));
 structure.push(new Argument("pro",240,"Affirmative Construction"));
 structure.push(makeBuffer());
@@ -48,11 +53,12 @@ structure.push(new Argument("con",180,"Negative Closing Statement"));
 structure.push(makeBuffer());
 structure.push(new Argument("pro",240,"Affirmative Closing Statement"));
 
+
 class Timer extends React.Component{
-    yieldTime(){
+    yieldTime(){ //removes current timer if there is a yield
         structure.splice(0,1);
     }
-    nextStage(self){
+    nextStage(self){ //if time runs out, go to the next category
         var time = structure[0];
             time.decrement();
             if(time.time==0)
@@ -64,12 +70,10 @@ class Timer extends React.Component{
                 self.setState({time:structure[0].get()});
             }
     }
-    tick(self)
+    tick(self) //updates the timer every second
     {
         if(structure.length>0)
         {
-            const buzzer = new Audio("buzzer.mp3");
-            buzzer.play();
             this.nextStage(self);
         }
         else{
